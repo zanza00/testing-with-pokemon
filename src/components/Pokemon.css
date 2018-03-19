@@ -1,0 +1,16 @@
+.pokemon {
+    padding: 2rem;
+    border: 1px solid black;
+}
+
+.water {
+    background-color: paleturquoise;
+}
+
+.fire {
+    background-color: orangered;
+}
+
+.grass {
+    background-color: palegreen;
+}
