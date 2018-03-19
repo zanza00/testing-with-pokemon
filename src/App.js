@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 
 import Pokemon from "./components/Pokemon";
+import Loader from "./components/Loader";
 
 import logo from "./Poke_Ball_icon.svg";
 import "./App.css";
@@ -38,7 +39,8 @@ class App extends PureComponent {
         super();
 
         this.state = {
-            pokemon: pokemonList[getRandomInt(pokemonList.length)]
+            pokemon: pokemonList[getRandomInt(pokemonList.length)],
+            loading: false
         };
 
         this.handlePokemonChange = this.handlePokemonChange.bind(this);
@@ -46,14 +48,17 @@ class App extends PureComponent {
 
     handlePokemonChange(e) {
         console.log(e.target.value);
+        this.setState({ loading: true });
         const selectedPokemon = pokemonList.find(
             ({ id }) => id === parseInt(e.target.value, 10)
         );
-        this.setState({ pokemon: selectedPokemon });
+        setTimeout(() => {
+            this.setState({ pokemon: selectedPokemon, loading: false });
+        }, 3000);
     }
 
     render() {
-        const { pokemon } = this.state;
+        const { pokemon, loading } = this.state;
         return (
             <div className="App">
                 <header className="App-header">
@@ -67,7 +72,7 @@ class App extends PureComponent {
                         </option>
                     ))}
                 </select>
-                <Pokemon {...pokemon} />
+                {loading ? <Loader /> : <Pokemon {...pokemon} />}
             </div>
         );
     }
