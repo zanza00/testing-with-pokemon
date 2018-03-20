@@ -5,7 +5,7 @@ import Pokemon from "./components/Pokemon";
 import Loader from "./components/Loader";
 
 import logo from "./Poke_Ball_icon.svg";
-import placeholder from "./Placeholder.png"
+import placeholderImage from "./Placeholder.png";
 import "./App.css";
 
 const optionList = [
@@ -40,12 +40,18 @@ export function parseResponse(response) {
     return result;
 }
 
+const placeholder = {
+    name: "missingno",
+    types: ["none"],
+    image: placeholderImage
+};
+
 class App extends PureComponent {
     constructor() {
         super();
 
         this.state = {
-            pokemon: { name: "missingno", types: ["none"], image: placeholder },
+            pokemon: placeholder,
             loading: false
         };
 
@@ -54,19 +60,22 @@ class App extends PureComponent {
 
     handlePokemonChange(e) {
         console.log(e.target.value);
-        if (e.target.value === "0") return;
-        this.setState({ loading: true });
-        const selectedPokemon = optionList.find(
-            ({ id }) => id === parseInt(e.target.value, 10)
-        );
-        axios
-            .get(selectedPokemon.uri)
-            .then(res => {
-                console.log(res.data);
-                const pokemon = parseResponse(res.data);
-                this.setState({ pokemon, loading: false });
-            })
-            .catch(e => console.error(e));
+        if (e.target.value === "0") {
+            this.setState({ pokemon: placeholder });
+        } else {
+            this.setState({ loading: true });
+            const selectedPokemon = optionList.find(
+                ({ id }) => id === parseInt(e.target.value, 10)
+            );
+            axios
+                .get(selectedPokemon.uri)
+                .then(res => {
+                    console.log(res.data);
+                    const pokemon = parseResponse(res.data);
+                    this.setState({ pokemon, loading: false });
+                })
+                .catch(e => console.error(e));
+        }
     }
 
     render() {
