@@ -4,31 +4,11 @@ import axios from "axios";
 import Pokemon from "./components/Pokemon";
 import Loader from "./components/Loader";
 
+import optionList from './pokemonList'
+
 import logo from "./Poke_Ball_icon.svg";
 import placeholderImage from "./Placeholder.png";
 import "./App.css";
-
-const optionList = [
-    {
-        id: 0,
-        name: "Choose your Pokémon"
-    },
-    {
-        id: 1,
-        name: "Bulbasaur",
-        uri: "https://pokeapi.co/api/v2/pokemon/1"
-    },
-    {
-        id: 4,
-        name: "Charizard",
-        uri: "https://pokeapi.co/api/v2/pokemon/4"
-    },
-    {
-        id: 7,
-        name: "Squirtle",
-        uri: "https://pokeapi.co/api/v2/pokemon/7"
-    }
-];
 
 export function parseResponse(response) {
     const result = {
@@ -68,7 +48,7 @@ class App extends PureComponent {
                 ({ id }) => id === parseInt(e.target.value, 10)
             );
             axios
-                .get(selectedPokemon.uri)
+                .get(selectedPokemon.url)
                 .then(res => {
                     console.log(res.data);
                     const pokemon = parseResponse(res.data);
