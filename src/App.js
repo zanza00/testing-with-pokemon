@@ -30,7 +30,13 @@ const optionList = [
 ];
 
 export function parseResponse(response) {
-    return response;
+    const result = {
+        id: response.id,
+        name: response.name,
+        image: response.image,
+        types: response.types,
+    };
+    return result;
 }
 
 class App extends PureComponent {
@@ -47,7 +53,7 @@ class App extends PureComponent {
 
     handlePokemonChange(e) {
         console.log(e.target.value);
-        if (e.target.value === '0') return 
+        if (e.target.value === '0') return;
         this.setState({ loading: true });
         const selectedPokemon = optionList.find(
             ({ id }) => id === parseInt(e.target.value, 10),
