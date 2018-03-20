@@ -1,37 +1,36 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
+import axios from 'axios';
 
-import Pokemon from "./components/Pokemon";
-import Loader from "./components/Loader";
+import Pokemon from './components/Pokemon';
+import Loader from './components/Loader';
 
-import logo from "./Poke_Ball_icon.svg";
-import "./App.css";
+import logo from './Poke_Ball_icon.svg';
+import './App.css';
 
-const pokemonList = [
+const optionList = [
+    {
+        id: 0,
+        name: 'Choose your Pokémon',
+    },
     {
         id: 1,
-        name: "Bulbasaur",
-        image:
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-        types: ["grass"]
+        name: 'Bulbasaur',
+        uri: 'https://pokeapi.co/api/v2/pokemon/1',
     },
     {
         id: 4,
-        name: "Charizard",
-        image:
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-        types: ["fire"]
+        name: 'Charizard',
+        uri: 'https://pokeapi.co/api/v2/pokemon/4',
     },
     {
         id: 7,
-        name: "Squirtle",
-        image:
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-        types: ["water"]
-    }
+        name: 'Squirtle',
+        uri: 'https://pokeapi.co/api/v2/pokemon/7',
+    },
 ];
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+export function parseResponse(response) {
+    return response;
 }
 
 class App extends PureComponent {
@@ -39,8 +38,8 @@ class App extends PureComponent {
         super();
 
         this.state = {
-            pokemon: pokemonList[getRandomInt(pokemonList.length)],
-            loading: false
+            pokemon: { name: 'placeholder', types: ['none'], image: logo },
+            loading: false,
         };
 
         this.handlePokemonChange = this.handlePokemonChange.bind(this);
@@ -48,13 +47,15 @@ class App extends PureComponent {
 
     handlePokemonChange(e) {
         console.log(e.target.value);
+        if (e.target.value === '0') return 
         this.setState({ loading: true });
-        const selectedPokemon = pokemonList.find(
-            ({ id }) => id === parseInt(e.target.value, 10)
+        const selectedPokemon = optionList.find(
+            ({ id }) => id === parseInt(e.target.value, 10),
         );
-        setTimeout(() => {
-            this.setState({ pokemon: selectedPokemon, loading: false });
-        }, 3000);
+        axios
+            .get(selectedPokemon.uri)
+            .then(res => console.log(res.data))
+            .catch(e => console.error(e));
     }
 
     render() {
@@ -66,7 +67,7 @@ class App extends PureComponent {
                     <h1 className="App-title">Choose your Pokemon</h1>
                 </header>
                 <select onChange={this.handlePokemonChange} value={pokemon.id}>
-                    {pokemonList.map(pokemon => (
+                    {optionList.map(pokemon => (
                         <option key={pokemon.id} value={pokemon.id}>
                             {pokemon.name}
                         </option>
