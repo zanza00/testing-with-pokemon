@@ -1,40 +1,41 @@
-import React, { PureComponent } from 'react';
-import axios from 'axios';
+import React, { PureComponent } from "react";
+import axios from "axios";
 
-import Pokemon from './components/Pokemon';
-import Loader from './components/Loader';
+import Pokemon from "./components/Pokemon";
+import Loader from "./components/Loader";
 
-import logo from './Poke_Ball_icon.svg';
-import './App.css';
+import logo from "./Poke_Ball_icon.svg";
+import placeholder from "./Placeholder.png"
+import "./App.css";
 
 const optionList = [
     {
         id: 0,
-        name: 'Choose your Pokémon',
+        name: "Choose your Pokémon"
     },
     {
         id: 1,
-        name: 'Bulbasaur',
-        uri: 'https://pokeapi.co/api/v2/pokemon/1',
+        name: "Bulbasaur",
+        uri: "https://pokeapi.co/api/v2/pokemon/1"
     },
     {
         id: 4,
-        name: 'Charizard',
-        uri: 'https://pokeapi.co/api/v2/pokemon/4',
+        name: "Charizard",
+        uri: "https://pokeapi.co/api/v2/pokemon/4"
     },
     {
         id: 7,
-        name: 'Squirtle',
-        uri: 'https://pokeapi.co/api/v2/pokemon/7',
-    },
+        name: "Squirtle",
+        uri: "https://pokeapi.co/api/v2/pokemon/7"
+    }
 ];
 
 export function parseResponse(response) {
     const result = {
         id: response.id,
-        name: response.name,
-        image: response.image,
-        types: response.types,
+        name: response.name.charAt(0).toUpperCase() + response.name.slice(1),
+        image: response.sprites.front_default,
+        types: response.types.map(type => type.type.name)
     };
     return result;
 }
@@ -44,8 +45,8 @@ class App extends PureComponent {
         super();
 
         this.state = {
-            pokemon: { name: 'placeholder', types: ['none'], image: logo },
-            loading: false,
+            pokemon: { name: "missingno", types: ["none"], image: placeholder },
+            loading: false
         };
 
         this.handlePokemonChange = this.handlePokemonChange.bind(this);
@@ -53,14 +54,18 @@ class App extends PureComponent {
 
     handlePokemonChange(e) {
         console.log(e.target.value);
-        if (e.target.value === '0') return;
+        if (e.target.value === "0") return;
         this.setState({ loading: true });
         const selectedPokemon = optionList.find(
-            ({ id }) => id === parseInt(e.target.value, 10),
+            ({ id }) => id === parseInt(e.target.value, 10)
         );
         axios
             .get(selectedPokemon.uri)
-            .then(res => console.log(res.data))
+            .then(res => {
+                console.log(res.data);
+                const pokemon = parseResponse(res.data);
+                this.setState({ pokemon, loading: false });
+            })
             .catch(e => console.error(e));
     }
 
