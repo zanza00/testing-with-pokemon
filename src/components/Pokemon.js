@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
-import './Pokemon.css';
+import React, { PureComponent } from "react";
+import "./Pokemon.css";
 
 function calculateClassNames(types) {
-    return types.join('-');
+    return types.join("-");
 }
 
 class Pokemon extends PureComponent {
@@ -10,8 +10,10 @@ class Pokemon extends PureComponent {
         const { image, name, types } = this.props;
         return (
             <div className={`pokemon ${calculateClassNames(types)}`}>
-                <img alt={name} src={image} width="192px" />
-                <div>{name}</div>
+                <div className="inner-card">
+                    <img alt={name} src={image} width="192px" />
+                    <div>{name}</div>
+                </div>
             </div>
         );
     }
