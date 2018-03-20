@@ -3,14 +3,128 @@
     border: 1px solid black;
 }
 
-.water {
-    background-color: paleturquoise;
+.none {
+    background: lightgray;
 }
 
+.grass-poison {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(120, 200, 80) 50%, rgb(160, 64, 160) 50%) repeat scroll 0% 0%;
+}
 .fire {
-    background-color: orangered;
+    background: rgb(240, 128, 48) none repeat scroll 0% 0%;
+}
+.fire-flying {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(240, 128, 48) 50%, rgb(168, 144, 240) 50%) repeat scroll 0% 0%;
+}
+.water {
+    background: rgb(104, 144, 240) none repeat scroll 0% 0%;
+}
+.bug {
+    background: rgb(168, 184, 32) none repeat scroll 0% 0%;
+}
+.bug-poison {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(168, 184, 32) 50%, rgb(160, 64, 160) 50%) repeat scroll 0% 0%;
+}
+.bug-flying {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(168, 184, 32) 50%, rgb(168, 144, 240) 50%) repeat scroll 0% 0%;
+}
+.flying-normal {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(168, 144, 240) 50%, rgb(168, 168, 120) 50%) repeat scroll 0% 0%;
+}
+.normal {
+    background: rgb(168, 168, 120) none repeat scroll 0% 0%;
+}
+.poison {
+    background: rgb(160, 64, 160) none repeat scroll 0% 0%;
+}
+.electric {
+    background: rgb(248, 208, 48) none repeat scroll 0% 0%;
+}
+.ground {
+    background: rgb(224, 192, 104) none repeat scroll 0% 0%;
+}
+.ground-poison {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(224, 192, 104) 50%, rgb(160, 64, 160) 50%) repeat scroll 0% 0%;
+}
+.fairy {
+    background: rgb(238, 153, 172) none repeat scroll 0% 0%;
+}
+.fairy-normal {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(238, 153, 172) 50%, rgb(168, 168, 120) 50%) repeat scroll 0% 0%;
+}
+.poison-flying {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(160, 64, 160) 50%, rgb(168, 144, 240) 50%) repeat scroll 0% 0%;
+}
+.grass-bug {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(120, 200, 80) 50%, rgb(168, 184, 32) 50%) repeat scroll 0% 0%;
+}
+.bug-poison {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(168, 184, 32) 50%, rgb(160, 64, 160) 50%) repeat scroll 0% 0%;
+}
+.fighting {
+    background: rgb(192, 48, 40) none repeat scroll 0% 0%;
+}
+.water-fighting {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(104, 144, 240) 50%, rgb(192, 48, 40) 50%) repeat scroll 0% 0%;
+}
+.psychic {
+    background: rgb(248, 88, 136) none repeat scroll 0% 0%;
+}
+.water-poison {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(104, 144, 240) 50%, rgb(160, 64, 160) 50%) repeat scroll 0% 0%;
+}
+.rock-ground {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(184, 160, 56) 50%, rgb(224, 192, 104) 50%) repeat scroll 0% 0%;
+}
+.psychic-water {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(248, 88, 136) 50%, rgb(104, 144, 240) 50%) repeat scroll 0% 0%;
+}
+.electric-steel {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(248, 208, 48) 50%, rgb(184, 184, 208) 50%) repeat scroll 0% 0%;
+}
+.ice-water {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(152, 216, 216) 50%, rgb(104, 144, 240) 50%) repeat scroll 0% 0%;
+}
+.ghost-poison {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(112, 88, 152) 50%, rgb(160, 64, 160) 50%) repeat scroll 0% 0%;
+}
+.psychic-grass {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(248, 88, 136) 50%, rgb(120, 200, 80) 50%) repeat scroll 0% 0%;
+}
+.grass {
+    background: rgb(120, 200, 80) none repeat scroll 0% 0%;
+}
+.psychic-fairy {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(248, 88, 136) 50%, rgb(238, 153, 172) 50%) repeat scroll 0% 0%;
+}
+.bug-flying {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(168, 184, 32) 50%, rgb(168, 144, 240) 50%) repeat scroll 0% 0%;
+}
+.psychic-ice {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(248, 88, 136) 50%, rgb(152, 216, 216) 50%) repeat scroll 0% 0%;
+}
+.water-rock {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(104, 144, 240) 50%, rgb(184, 160, 56) 50%) repeat scroll 0% 0%;
 }
 
-.grass {
-    background-color: palegreen;
+.water-flying {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(104, 144, 240) 50%, rgb(168, 144, 240) 50%) repeat scroll 0% 0%;
+}
+.rock-flying {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(184, 160, 56) 50%, rgb(168, 144, 240) 50%) repeat scroll 0% 0%;
+}
+.ice-flying {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(152, 216, 216) 50%, rgb(168, 144, 240) 50%) repeat scroll 0% 0%;
+}
+.electric-flying {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(248, 208, 48) 50%, rgb(168, 144, 240) 50%) repeat scroll 0% 0%;
+}
+.fire-flying {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(240, 128, 48) 50%, rgb(168, 144, 240) 50%) repeat scroll 0% 0%;
+}
+.dragon {
+    background: rgb(112, 56, 248) none repeat scroll 0% 0%;
+}
+.dragon-flying {
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(112, 56, 248) 50%, rgb(168, 144, 240) 50%) repeat scroll 0% 0%;
 }
