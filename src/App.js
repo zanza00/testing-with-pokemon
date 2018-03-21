@@ -3,32 +3,11 @@ import axios from 'axios';
 
 import Pokemon from './components/Pokemon';
 import Loader from './components/Loader';
+import optionList from './pokemonList';
 
 import logo from './Poke_Ball_icon.svg';
 import placeholderImage from './Placeholder.png';
 import './App.css';
-
-const optionList = [
-    {
-        id: 0,
-        name: 'Choose your Pokémon',
-    },
-    {
-        id: 1,
-        url: 'https://pokeapi.co/api/v2/pokemon/1/',
-        name: 'Bulbasaur',
-    },
-    {
-        id: 4,
-        url: 'https://pokeapi.co/api/v2/pokemon/4/',
-        name: 'Charmander',
-    },
-    {
-        id: 7,
-        url: 'https://pokeapi.co/api/v2/pokemon/7/',
-        name: 'Squirtle',
-    },
-];
 
 const placeholder = {
     name: 'missingno',

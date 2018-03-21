@@ -140,8 +140,12 @@ it('can parse the response for charmander', () => {
 
 if you made it this far you will have a small problem with bulbasaur that need a small modification of the parser
 
-## Next step
+## Step 4
 
 Now use the Pokémon list, located in `src/pokemonList.js` to populate the dropdown and enjoy data from the original 151 Pokémon
 
-to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/4_all_the_pokemon)
+## Optional next step
+
+If you want you can test react components refer to [this guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#testing-components)
+
+to view the finished demo click [here](https://github.com/zanza00/testing-with-pokemon/)
