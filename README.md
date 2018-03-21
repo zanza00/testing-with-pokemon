@@ -101,4 +101,41 @@ When the test will pass the app will correctly display the pokemon data :)
 
 ## Next step
 
-to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/2_testing_squirtle)
+Now test also Charmender and Bulbasaur using the following tests, **remember to save the responses**
+
+```javascript
+it('can parse the response for bulbasaur', () => {
+    const response = bulbasaur;
+
+    // Same object that we had before
+    const expected = {
+        id: 1,
+        name: 'Bulbasaur',
+        image:
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+        types: ['grass', 'poison'],
+    };
+
+    const result = parseResponse(response);
+
+    expect(result).toEqual(expected);
+});
+it('can parse the response for charmander', () => {
+    const response = charmander;
+
+    // Same object that we had before
+    const expected = {
+        id: 4,
+        name: 'Bulbasaur',
+        image:
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
+        types: ['fire'],
+    };
+
+    const result = parseResponse(response);
+
+    expect(result).toEqual(expected);
+});
+```
+
+to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/3_testing_three_starters)
