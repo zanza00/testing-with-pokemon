@@ -138,4 +138,6 @@ it('can parse the response for charmander', () => {
 });
 ```
 
+if you made it this far you will have a small problem with bulbasaur that need a small modification of the parser
+
 to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/3_testing_three_starters)
