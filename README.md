@@ -126,7 +126,7 @@ it('can parse the response for charmander', () => {
     // Same object that we had before
     const expected = {
         id: 4,
-        name: 'Bulbasaur',
+        name: 'Charmander',
         image:
             'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
         types: ['fire'],
