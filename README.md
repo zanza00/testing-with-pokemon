@@ -32,4 +32,52 @@ N.B. Here i'm using [Axios](https://github.com/axios/axios) because I wanted to 
 
 In the next step we will be using the data returned by the PokéAPI for **Squirtle** to implement a test with a simple parser
 
+First we need to save the response for `Squirtle`, save it in `src/responses/squirtle.js` **Waring** it's a veeeery big response. (like 10k lines)
+
+```javascript
+// src/responses/squirtle.js
+
+export default {
+    //...
+};
+```
+
+Inside `App.js` export and create a function to parse the response
+
+```javascript
+// src/App.js
+export function parseResponse(response) {
+    const result = response;
+    return result;
+}
+```
+
+inside `App.test.js` create a test (that will fail when runned) and import the necessary things
+
+```javascript
+import App, { parseResponse } from './App';
+import squirtle from './responses/squirtle';
+
+// other test
+
+describe('Response Parse', () => {
+    it('can parse the response for squirtle', () => {
+        const response = squirtle;
+
+        // Same object that we had before
+        const expected = {
+            id: 7,
+            name: 'Squirtle',
+            image:
+                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png',
+            types: ['water'],
+        };
+
+        const result = parseResponse(response);
+
+        expect(result).toEqual(expected);
+    });
+});
+```
+
 to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/2_testing_squirtle)
