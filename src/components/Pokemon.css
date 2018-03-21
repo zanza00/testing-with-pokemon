@@ -122,7 +122,8 @@
         linear-gradient(90deg, rgb(248, 208, 48) 50%, rgb(184, 184, 208) 50%)
         repeat scroll 0% 0%;
 }
-.ice-water {
+.ice-water,
+.water-ice {
     background: rgba(0, 0, 0, 0)
         linear-gradient(90deg, rgb(152, 216, 216) 50%, rgb(104, 144, 240) 50%)
         repeat scroll 0% 0%;
