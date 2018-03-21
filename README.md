@@ -22,4 +22,4 @@ In this step there is very simple application: you can select one of three pokem
 
 In the next step we will be using the endpoint `https://pokeapi.co/api/v2/pokemon/:id` to retrieve the informations, we will using a TDD approach to write the parser of the response
 
-to view the next step click [here](#)
+to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/1_call_and_console_log)
