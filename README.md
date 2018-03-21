@@ -28,7 +28,7 @@ Right now the UI will not be updated because we simply `console.log` the respons
 
 N.B. Here i'm using [Axios](https://github.com/axios/axios) because I wanted to try it :sunglasses:
 
-## Next step
+## Step 2
 
 In the next step we will be using the data returned by the PokéAPI for **Squirtle** to implement a test with a simple parser
 
@@ -98,5 +98,7 @@ describe('Response Parse', () => {
 Now start to implement the parser.
 
 When the test will pass the app will correctly display the pokemon data :)
+
+## Next step
 
 to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/2_testing_squirtle)

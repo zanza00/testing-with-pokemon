@@ -36,6 +36,16 @@ const placeholder = {
     image: placeholderImage,
 };
 
+export function parseResponse(response) {
+    const result = {
+        id: response.id,
+        name: response.name.charAt(0).toUpperCase() + response.name.slice(1),
+        image: response.sprites.front_default,
+        types: response.types.map(({ type }) => type.name),
+    };
+    return result;
+}
+
 class App extends PureComponent {
     constructor() {
         super();
@@ -60,7 +70,8 @@ class App extends PureComponent {
                 .get(selectedPokemon.url)
                 .then(res => {
                     console.log(res.data);
-                    this.setState({ loading: false });
+                    const pokemon = parseResponse(res.data);
+                    this.setState({ pokemon, loading: false });
                 })
                 .catch(e => console.error(e));
         }
