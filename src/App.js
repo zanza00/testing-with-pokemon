@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import axios from 'axios';
 
 import Pokemon from './components/Pokemon';
 import Loader from './components/Loader';
@@ -14,24 +15,18 @@ const optionList = [
     },
     {
         id: 1,
+        url: 'https://pokeapi.co/api/v2/pokemon/1/',
         name: 'Bulbasaur',
-        image:
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-        types: ['grass'],
     },
     {
         id: 4,
+        url: 'https://pokeapi.co/api/v2/pokemon/4/',
         name: 'Charmander',
-        image:
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
-        types: ['fire'],
     },
     {
         id: 7,
+        url: 'https://pokeapi.co/api/v2/pokemon/7/',
         name: 'Squirtle',
-        image:
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png',
-        types: ['water'],
     },
 ];
 
@@ -61,9 +56,13 @@ class App extends PureComponent {
         } else {
             this.setState({ loading: true });
             const selectedPokemon = optionList.find(({ id }) => id === value);
-            setTimeout(() => {
-                this.setState({ pokemon: selectedPokemon, loading: false });
-            }, 3000);
+            axios
+                .get(selectedPokemon.url)
+                .then(res => {
+                    console.log(res.data);
+                    this.setState({ loading: false });
+                })
+                .catch(e => console.error(e));
         }
     }
 

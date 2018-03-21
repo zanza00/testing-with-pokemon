@@ -18,8 +18,18 @@ Project created using [react-create-app](https://github.com/facebook/create-reac
 
 In this step there is very simple application: you can select one of three pokemon and after 3 second (to simulate a network call) it will be displayed.
 
+## Step 1
+
+In this step we have changed the info that populate the `<select />` removing pokemon data and added the `url` to call for the three choices.
+
+We have added the function to `parse` the response and setup a way to test it.
+
+Right now the UI will not be updated because we simply `console.log` the response data.
+
+N.B. Here i'm using [Axios](https://github.com/axios/axios) because I wanted to try it :sunglasses:
+
 ## Next step
 
-In the next step we will be using the endpoint `https://pokeapi.co/api/v2/pokemon/:id` to retrieve the informations, we will using a TDD approach to write the parser of the response
+In the next step we will be using the data returned by the PokéAPI for **Squirtle** to implement a test with a simple parser
 
-to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/1_call_and_console_log)
+to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/2_testing_squirtle)
