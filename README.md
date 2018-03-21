@@ -52,6 +52,21 @@ export function parseResponse(response) {
 }
 ```
 
+use that function to parse and save in state
+
+```javascript
+handlePokemonChange(e) {
+    // code
+axios
+    .get(selectedPokemon.url)
+    .then(res => {
+        console.log(res.data);
+        const pokemon = parseResponse(res.data);
+        this.setState({ pokemon, loading: false });
+    })
+    .catch(e => console.error(e));
+```
+
 inside `App.test.js` create a test (that will fail when runned) and import the necessary things
 
 ```javascript
@@ -79,5 +94,9 @@ describe('Response Parse', () => {
     });
 });
 ```
+
+Now start to implement the parser.
+
+When the test will pass the app will correctly display the pokemon data :)
 
 to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/2_testing_squirtle)
