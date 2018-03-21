@@ -99,7 +99,7 @@ Now start to implement the parser.
 
 When the test will pass the app will correctly display the pokemon data :)
 
-## Next step
+## Step 3
 
 Now test also Charmender and Bulbasaur using the following tests, **remember to save the responses**
 
@@ -140,4 +140,8 @@ it('can parse the response for charmander', () => {
 
 if you made it this far you will have a small problem with bulbasaur that need a small modification of the parser
 
-to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/3_testing_three_starters)
+## Next step
+
+Now use the Pokémon list, located in `src/pokemonList.js` to populate the dropdown and enjoy data from the original 151 Pokémon
+
+to view the next step click [here](https://github.com/zanza00/testing-with-pokemon/tree/4_all_the_pokemon)
