@@ -1,5 +1,5 @@
-import React, { PureComponent } from "react";
-import "./Loader.css";
+import React, { PureComponent } from 'react';
+import './Loader.css';
 
 class Loader extends PureComponent {
     render() {
