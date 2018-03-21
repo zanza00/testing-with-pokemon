@@ -37,6 +37,8 @@ git checkout origin/1_call_and_console_log
 ```
 
 [click here](https://github.com/zanza00/testing-with-pokemon/tree/1_call_and_console_log)
+[diff from step 0](https://github.com/zanza00/testing-with-pokemon/compare/0_start...1_call_and_console_log?diff=split&expand=1&name=1_call_and_console_log)
+
 
 ### Step 2
 
@@ -45,6 +47,7 @@ git checkout origin/2_testing_squirtle
 ```
 
 [click here](https://github.com/zanza00/testing-with-pokemon/tree/2_testing_squirtle)
+[diff from step 1](https://github.com/zanza00/testing-with-pokemon/compare/1_call_and_console_log...2_testing_squirtle?diff=split&expand=1&name=2_testing_squirtle)
 
 ### Step 3
 
@@ -53,6 +56,7 @@ git checkout origin/3_testing_three_starters
 ```
 
 [click here](https://github.com/zanza00/testing-with-pokemon/tree/3_testing_three_starters)
+[diff from step 2](https://github.com/zanza00/testing-with-pokemon/compare/2_testing_squirtle...3_testing_three_starters?diff=split&expand=1&name=3_testing_three_starters)
 
 ### Step 4
 
@@ -61,3 +65,4 @@ git checkout origin/4_all_the_pokemon
 ```
 
 [click here](https://github.com/zanza00/testing-with-pokemon/tree/4_all_the_pokemon)
+[diff from step 3](https://github.com/zanza00/testing-with-pokemon/compare/3_testing_three_starters...4_all_the_pokemon?diff=split&expand=1&name=4_all_the_pokemon)
