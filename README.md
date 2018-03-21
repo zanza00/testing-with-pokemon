@@ -14,138 +14,50 @@ Project created using [react-create-app](https://github.com/facebook/create-reac
 
 * Test -> `yarn test` _or_ `npm test`
 
-## Step 0
+## Steps
 
-In this step there is very simple application: you can select one of three pokemon and after 3 second (to simulate a network call) it will be displayed.
+Every step is a branch, you can go directly to that branch and checkout the various stages
 
-## Step 1
-
-In this step we have changed the info that populate the `<select />` removing pokemon data and added the `url` to call for the three choices.
-
-We have added the function to `parse` the response and setup a way to test it.
-
-Right now the UI will not be updated because we simply `console.log` the response data.
-
-N.B. Here i'm using [Axios](https://github.com/axios/axios) because I wanted to try it :sunglasses:
-
-## Step 2
-
-In the next step we will be using the data returned by the PokéAPI for **Squirtle** to implement a test with a simple parser
-
-First we need to save the response for `Squirtle`, save it in `src/responses/squirtle.js` **Waring** it's a veeeery big response. (like 10k lines)
-
-```javascript
-// src/responses/squirtle.js
-
-export default {
-    //...
-};
+```sh
+git clone https://github.com/zanza00/testing-with-pokemon.git
 ```
 
-Inside `App.js` export and create a function to parse the response
+### Step 0
 
-```javascript
-// src/App.js
-export function parseResponse(response) {
-    const result = response;
-    return result;
-}
+```sh
+git checkout origin/0_start
 ```
 
-use that function to parse and save in state
+[Start Here](https://github.com/zanza00/testing-with-pokemon/tree/0_start)
 
-```javascript
-handlePokemonChange(e) {
-    // code
-axios
-    .get(selectedPokemon.url)
-    .then(res => {
-        console.log(res.data);
-        const pokemon = parseResponse(res.data);
-        this.setState({ pokemon, loading: false });
-    })
-    .catch(e => console.error(e));
+### Step 1
+
+```sh
+git checkout origin/1_call_and_console_log
 ```
 
-inside `App.test.js` create a test (that will fail when runned) and import the necessary things
+[click here](https://github.com/zanza00/testing-with-pokemon/tree/1_call_and_console_log)
 
-```javascript
-import App, { parseResponse } from './App';
-import squirtle from './responses/squirtle';
+### Step 2
 
-// other test
-
-describe('Response Parse', () => {
-    it('can parse the response for squirtle', () => {
-        const response = squirtle;
-
-        // Same object that we had before
-        const expected = {
-            id: 7,
-            name: 'Squirtle',
-            image:
-                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png',
-            types: ['water'],
-        };
-
-        const result = parseResponse(response);
-
-        expect(result).toEqual(expected);
-    });
-});
+```sh
+git checkout origin/2_testing_squirtle
 ```
 
-Now start to implement the parser.
+[click here](https://github.com/zanza00/testing-with-pokemon/tree/2_testing_squirtle)
 
-When the test will pass the app will correctly display the pokemon data :)
+### Step 3
 
-## Step 3
-
-Now test also Charmender and Bulbasaur using the following tests, **remember to save the responses**
-
-```javascript
-it('can parse the response for bulbasaur', () => {
-    const response = bulbasaur;
-
-    // Same object that we had before
-    const expected = {
-        id: 1,
-        name: 'Bulbasaur',
-        image:
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-        types: ['grass', 'poison'],
-    };
-
-    const result = parseResponse(response);
-
-    expect(result).toEqual(expected);
-});
-it('can parse the response for charmander', () => {
-    const response = charmander;
-
-    // Same object that we had before
-    const expected = {
-        id: 4,
-        name: 'Charmander',
-        image:
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
-        types: ['fire'],
-    };
-
-    const result = parseResponse(response);
-
-    expect(result).toEqual(expected);
-});
+```sh
+git checkout origin/3_testing_three_starters
 ```
 
-if you made it this far you will have a small problem with bulbasaur that need a small modification of the parser
+[click here](https://github.com/zanza00/testing-with-pokemon/tree/3_testing_three_starters)
 
-## Step 4
+### Step 4
 
-Now use the Pokémon list, located in `src/pokemonList.js` to populate the dropdown and enjoy data from the original 151 Pokémon
+```sh
+git checkout origin/4_all_the_pokemon
+```
 
-## Optional next step
-
-If you want you can test react components refer to [this guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#testing-components)
-
-to view the finished demo click [here](https://github.com/zanza00/testing-with-pokemon/)
+[click here](https://github.com/zanza00/testing-with-pokemon/tree/4_all_the_pokemon)
