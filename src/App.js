@@ -41,7 +41,9 @@ export function parseResponse(response) {
         id: response.id,
         name: response.name.charAt(0).toUpperCase() + response.name.slice(1),
         image: response.sprites.front_default,
-        types: response.types.map(({ type }) => type.name),
+        types: response.types
+            .sort((a, b) => a.slot - b.slot)
+            .map(({ type }) => type.name),
     };
     return result;
 }
